@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
     public static UnityAction<AudioFraza> OnFraza;
     private void Start()
     {
-        GameManager.OnAddCoin += AddCoin;
+        GameManager.OnUpdateCoin += AddCoin;
         OnFraza += PlayFraza;
     }
     private void AddCoin()

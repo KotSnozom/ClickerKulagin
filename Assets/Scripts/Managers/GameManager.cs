@@ -6,7 +6,8 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
-    public static UnityAction OnAddCoin;
+    public static UnityAction<int,int> OnShopCoin;
+    public static UnityAction OnUpdateCoin;
     public static UnityAction<int> OnAddAchivment;
     [SerializeField] private static int _coin;
     [SerializeField] private int _forceAddCoin;
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        OnShopCoin += MinusCoin;
         OnAddAchivment += AddCoinAchivment;
         LoadProgress();
     }
@@ -25,12 +27,18 @@ public class GameManager : MonoBehaviour
     private void AddCoinAchivment(int coin)
     {
         _coin += coin;
-        OnAddCoin?.Invoke();
+        OnUpdateCoin?.Invoke();
     }
     public void AddCoin()
     {
         _coin += _forceAddCoin;
-        OnAddCoin?.Invoke();
+        OnUpdateCoin?.Invoke();
+    }
+    public void MinusCoin(int coin,int addForce)
+    {
+        _forceAddCoin += addForce;
+        _coin -= coin;
+        OnUpdateCoin?.Invoke();
     }
 
     public static int GetCoin() 
@@ -51,6 +59,6 @@ public class GameManager : MonoBehaviour
             _coin = PlayerPrefs.GetInt(_progress);
         }
         await Task.Delay(1000);
-        OnAddCoin?.Invoke();
+        OnUpdateCoin?.Invoke();
     }
 }

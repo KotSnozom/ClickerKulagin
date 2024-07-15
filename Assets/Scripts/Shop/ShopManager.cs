@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ShopManager : MonoBehaviour
 {
+    public static UnityAction OnCheckPrice;
     [SerializeField] private RectTransform _parent;
     [SerializeField] private ShopCardList _shopCardList;
     [SerializeField] private ShopCardPrefab _cardPrefab;

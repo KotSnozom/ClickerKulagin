@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        GameManager.OnAddCoin += CoinUpdate;
+        GameManager.OnUpdateCoin += CoinUpdate;
     }
     private void CoinUpdate()
     {
