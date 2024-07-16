@@ -14,11 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shopCards:
   - NameCard: 1
-    Icon: {fileID: 0}
+    Icon: {fileID: 1766689480, guid: b8bdd4f403670d042bea1b18e0532cc2, type: 3}
     Prices: 00000000140000002800000050000000a0000000400100008002000000050000000a000000140000c78aa900
   - NameCard: 2
-    Icon: {fileID: 0}
+    Icon: {fileID: 201575571, guid: b8bdd4f403670d042bea1b18e0532cc2, type: 3}
     Prices: 0000000064000000c8000000
   - NameCard: 3
-    Icon: {fileID: 0}
+    Icon: {fileID: -847420599, guid: b8bdd4f403670d042bea1b18e0532cc2, type: 3}
     Prices: 00000000fa000000f4010000
+  - NameCard: 4
+    Icon: {fileID: 698098183, guid: b8bdd4f403670d042bea1b18e0532cc2, type: 3}
+    Prices: 00000000f4010000e80300008813000088130000
+  - NameCard: 5
+    Icon: {fileID: 1064871893, guid: b8bdd4f403670d042bea1b18e0532cc2, type: 3}
+    Prices: 00000000f4010000e80300008813000010270000
