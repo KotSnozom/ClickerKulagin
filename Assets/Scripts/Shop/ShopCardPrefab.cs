@@ -31,7 +31,7 @@ public class ShopCardPrefab : MonoBehaviour
     }
     public void Buy()
     {
-        if (_indexPrice < _prices.Count & _indexPrice != _prices.Count -1)
+        if (_indexPrice <= _prices.Count)
         {
             GameManager.OnShopCoin?.Invoke(_prices[_indexPrice],_addForce);
             _indexPrice++;
@@ -42,20 +42,26 @@ public class ShopCardPrefab : MonoBehaviour
     {
         await Task.Yield();
         int _currentPrice = GameManager.GetCoin();
-        if (_currentPrice >= _prices[_indexPrice] & _indexPrice != _prices.Count - 1)
+
+        if(_indexPrice < _prices.Count)
         {
-            _card.interactable = true;
-            _indexPrice = Mathf.Clamp(_indexPrice, 0, _prices.Count - 1);
+            Debug.Log(_indexPrice < _prices.Count);
             _priceText.text = _prices[_indexPrice].ToString();
-        }
-        else if(_indexPrice == _prices.Count - 1)
-        {
-            _card.interactable = false;
-            _priceText.text = MaxLVL;
+            if (_currentPrice > _prices[_indexPrice])
+            {
+                _card.interactable = true;
+                _indexPrice = Mathf.Clamp(_indexPrice, 0, _prices.Count);
+            }
         }
         else
         {
             _card.interactable = false;
+        }
+
+        if(_indexPrice == _prices.Count)
+        {
+            _card.interactable = false;
+            _priceText.text = MaxLVL;
         }
 
     }
