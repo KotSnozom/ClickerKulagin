@@ -15,7 +15,7 @@ MonoBehaviour:
   _shopCards:
   - NameCard: 1
     Icon: {fileID: 0}
-    Prices: 0000000014000000
+    Prices: 00000000140000002800000050000000a0000000400100008002000000050000000a000000140000
   - NameCard: 2
     Icon: {fileID: 0}
     Prices: 0000000064000000c8000000

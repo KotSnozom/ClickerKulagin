@@ -20,8 +20,13 @@ public class ShopManager : MonoBehaviour
         foreach (var item in _shopCardList.ShopCards)
         {
             ShopCardPrefab _new = Instantiate(_cardPrefab,_parent);
-            _new.Init(item.Icon,item.Prices);
+            _new.Init(item.NameCard,item.Icon,item.Prices);
         }
+        CheckPriceCard();
         await Task.Yield();
+    }
+    public static void CheckPriceCard()
+    {
+        OnCheckPrice?.Invoke();
     }
 }

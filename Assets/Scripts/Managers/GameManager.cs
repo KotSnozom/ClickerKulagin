@@ -9,9 +9,11 @@ public class GameManager : MonoBehaviour
     public static UnityAction<int,int> OnShopCoin;
     public static UnityAction OnUpdateCoin;
     public static UnityAction<int> OnAddAchivment;
+
     [SerializeField] private static int _coin;
     [SerializeField] private int _forceAddCoin;
 
+    private const string _force = "ForceTap";
     private const string _progress = "Progress";
 
     private void Start()
@@ -40,14 +42,13 @@ public class GameManager : MonoBehaviour
         _coin -= coin;
         OnUpdateCoin?.Invoke();
     }
-
     public static int GetCoin() 
     {
         return _coin;
     }
-
     private async void SaveProgress()
     {
+        PlayerPrefs.SetInt(_force, _forceAddCoin);
         PlayerPrefs.SetInt(_progress, _coin);
         await Task.Yield();
     }
@@ -55,8 +56,11 @@ public class GameManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey(_progress))
         {
-            Debug.Log(PlayerPrefs.GetInt(_progress));
             _coin = PlayerPrefs.GetInt(_progress);
+        }
+        if (PlayerPrefs.HasKey(_force))
+        {
+            _forceAddCoin = PlayerPrefs.GetInt(_force);
         }
         await Task.Delay(1000);
         OnUpdateCoin?.Invoke();
