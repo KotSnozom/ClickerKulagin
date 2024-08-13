@@ -52,10 +52,10 @@ public class ShopCardPrefab : MonoBehaviour
                 _card.interactable = true;
                 _indexPrice = Mathf.Clamp(_indexPrice, 0, _prices.Count);
             }
-        }
-        else
-        {
-            _card.interactable = false;
+            else
+            {
+                _card.interactable = false;
+            }
         }
 
         if(_indexPrice == _prices.Count)
