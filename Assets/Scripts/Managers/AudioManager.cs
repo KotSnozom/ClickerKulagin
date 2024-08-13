@@ -12,7 +12,6 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip[] _click;
-    [SerializeField] private AudioFraza[] _listFraz;
     public static UnityAction<AudioFraza> OnFraza;
     private void Start()
     {
