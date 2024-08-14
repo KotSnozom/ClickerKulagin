@@ -10,16 +10,16 @@ public class AchivmentManager : MonoBehaviour
     [SerializeField] private AchivmentPrefab _achivmentPrefab;
     [SerializeField] private List<AchivmentPrefab> achivmentPrefabs;
 
-    private void Start()
+    private async void Start()
     {
-        SpawnAchivment();
+        await SpawnAchivment();
         LoadAchivment();
     }
     private void OnApplicationQuit()
     {
         SaveAchivment();
     }
-    private async void SpawnAchivment()
+    private async Task SpawnAchivment()
     {
         foreach (var item in achivmentList.Achivments)
         {

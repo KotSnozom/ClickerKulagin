@@ -13,28 +13,28 @@ MonoBehaviour:
   m_Name: NewAchivmentList
   m_EditorClassIdentifier: 
   achivments:
-  - SaveName: 10C
-    CoinsBalance: 10
-    CoinGive: 10
-    Icon: {fileID: 21300000, guid: ae66b7cc0f742c348bb53adc5ddc4d81, type: 3}
-    Text: "\u041F\u0435\u0440\u0432\u0430\u044F \u043E\u0447\u0438\u0432\u043A\u0430"
   - SaveName: 50C
     CoinsBalance: 50
     CoinGive: 25
     Icon: {fileID: 21300000, guid: ae66b7cc0f742c348bb53adc5ddc4d81, type: 3}
     Text: "\u0422\u044B\u043A\u0430\u044E \u0438 \u0442\u044B\u043A\u0430\u044E"
-  - SaveName: 500C
-    CoinsBalance: 500
-    CoinGive: 500
-    Icon: {fileID: 21300000, guid: ae66b7cc0f742c348bb53adc5ddc4d81, type: 3}
-    Text: "\u0414\u0430 \u0441\u043A\u043E\u043B\u044C\u043A\u043E \u043C\u043E\u0436\u043D\u043E"
-  - SaveName: 750C
-    CoinsBalance: 750
-    CoinGive: 1000000
-    Icon: {fileID: 21300000, guid: ae66b7cc0f742c348bb53adc5ddc4d81, type: 3}
-    Text: "\u041E\u041E\u041E\u041E\u041E\u041E\u041E"
   - SaveName: 1000C
     CoinsBalance: 1000
-    CoinGive: 1
+    CoinGive: 1000
+    Icon: {fileID: 21300000, guid: ae66b7cc0f742c348bb53adc5ddc4d81, type: 3}
+    Text: "\u041F\u0435\u0440\u0432\u0430\u044F \u043E\u0447\u0438\u0432\u043A\u0430"
+  - SaveName: 666C
+    CoinsBalance: 666
+    CoinGive: 666
+    Icon: {fileID: 21300000, guid: ae66b7cc0f742c348bb53adc5ddc4d81, type: 3}
+    Text: "\u0414\u0430 \u0441\u043A\u043E\u043B\u044C\u043A\u043E \u043C\u043E\u0436\u043D\u043E"
+  - SaveName: 7500C
+    CoinsBalance: 7500
+    CoinGive: 1000
+    Icon: {fileID: 21300000, guid: ae66b7cc0f742c348bb53adc5ddc4d81, type: 3}
+    Text: "\u041E\u041E\u041E\u041E\u041E\u041E\u041E"
+  - SaveName: 10000C
+    CoinsBalance: 10000
+    CoinGive: 1000
     Icon: {fileID: 21300000, guid: ae66b7cc0f742c348bb53adc5ddc4d81, type: 3}
     Text: "\u0427\u0438\u043D\u0430\u0437\u0437\u0437\u0435\u0441"
