@@ -22,10 +22,6 @@ public class GameManager : MonoBehaviour
         OnAddAchivment += AddCoinAchivment;
         LoadProgress();
     }
-    private void OnApplicationQuit()
-    {
-        SaveProgress();
-    }
     private void AddCoinAchivment(int coin)
     {
         _coin += coin;
@@ -35,6 +31,7 @@ public class GameManager : MonoBehaviour
     {
         _coin += _forceAddCoin;
         OnUpdateCoin?.Invoke();
+        SaveProgress();
     }
     public void MinusCoin(int coin,int addForce)
     {
@@ -62,7 +59,7 @@ public class GameManager : MonoBehaviour
         {
             _forceAddCoin = PlayerPrefs.GetInt(_force);
         }
-        await Task.Delay(1000);
+        await Task.Yield();
         OnUpdateCoin?.Invoke();
     }
 }

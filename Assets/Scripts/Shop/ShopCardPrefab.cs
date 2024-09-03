@@ -15,11 +15,6 @@ public class ShopCardPrefab : MonoBehaviour
     [SerializeField] private int _addForce;
     [SerializeField] private List<int> _prices;
     [SerializeField] private int _indexPrice;
-
-    private void OnApplicationQuit()
-    {
-        SaveState();
-    }
     public void Init(string Name,Sprite icon,List<int> prices)
     {
         ShopManager.OnCheckPrice += CheckPriceCard;
@@ -35,6 +30,7 @@ public class ShopCardPrefab : MonoBehaviour
         {
             GameManager.OnShopCoin?.Invoke(_prices[_indexPrice],_addForce);
             _indexPrice++;
+            SaveState();
         }
             ShopManager.OnCheckPrice?.Invoke();
     }
@@ -45,17 +41,16 @@ public class ShopCardPrefab : MonoBehaviour
 
         if(_indexPrice < _prices.Count)
         {
-            Debug.Log(_indexPrice < _prices.Count);
             _priceText.text = _prices[_indexPrice].ToString();
-            if (_currentPrice > _prices[_indexPrice])
+            if (_currentPrice >= _prices[_indexPrice])
             {
                 _card.interactable = true;
                 _indexPrice = Mathf.Clamp(_indexPrice, 0, _prices.Count);
             }
-        }
-        else
-        {
-            _card.interactable = false;
+            else
+            {
+                _card.interactable = false;
+            }
         }
 
         if(_indexPrice == _prices.Count)
