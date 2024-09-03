@@ -21,10 +21,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private List<WindowType> _windowTypes;
 
     [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private ParticleSystem _BGParticleS;
 
     private void Start()
     {
         GameManager.OnUpdateCoin += CoinUpdate;
+        SetBounceBGParticle();
     }
     private void CoinUpdate()
     {
@@ -60,5 +62,11 @@ public class UIManager : MonoBehaviour
         _particleSystem.transform.position = _parPos;
 
         _particleSystem.Play();
+    }
+
+    private void SetBounceBGParticle()
+    {
+        var _particle = _BGParticleS.shape;
+        _particle.scale = _cam.ScreenToWorldPoint(new Vector3(Screen.width,Screen.height,0)) * 2;
     }
 }
